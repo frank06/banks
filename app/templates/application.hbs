@@ -1,16 +1,16 @@
 <h1>{{ bank.name }} products</h1>
 
-<h3>With manual filter</h3>
+<h3>Filter with promise &amp; <code>PromiseArray</code></h3>
 
-Filter (manual): {{ input value=search }}<br><br>
+Filter: {{ input value=input1 }}<br><br>
 
 <table>
   <tr>
     <th>Product Name</th>
     <th>Description</th>
-    <th>Employees</th>
+    <th>Active</th>
   </tr>
-  {{#each filter as |product| }}
+  {{#each filter1 as |product| }}
   <tr>
     <td>{{ product.name }}</td>
     <td>{{ product.description }}</td>
@@ -21,17 +21,38 @@ Filter (manual): {{ input value=search }}<br><br>
 
 <br><hr><br>
 
-<h3>With add-on filter</h3>
+<h3>Filter sync</h3>
 
-Filter (add-on): {{ input value=query }}<br><br>
+Filter: {{ input value=input2 }}<br><br>
 
 <table>
   <tr>
     <th>Product Name</th>
     <th>Description</th>
-    <th>Employees</th>
+    <th>Active</th>
   </tr>
-  {{#each filteredList as |product| }}
+  {{#each filter2 as |product| }}
+  <tr>
+    <td>{{ product.name }}</td>
+    <td>{{ product.description }}</td>
+    <td>{{ product.accounts }}</td>
+  </tr>
+  {{/each}}
+</table>
+
+<br><hr><br>
+
+<h3>Add-on <code>ember-cli-filter-by-query</code> filter</h3>
+
+Filter: {{ input value=input3 }}<br><br>
+
+<table>
+  <tr>
+    <th>Product Name</th>
+    <th>Description</th>
+    <th>Active</th>
+  </tr>
+  {{#each filter3 as |product| }}
   <tr>
     <td>{{ product.name }}</td>
     <td>{{ product.description }}</td>

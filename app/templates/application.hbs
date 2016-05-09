@@ -1,3 +1,41 @@
-<h2 id="title">Welcome to Ember</h2>
+<h1>{{ bank.name }} products</h1>
 
-{{outlet}}
+<h3>With manual filter</h3>
+
+Filter (manual): {{ input value=search }}<br><br>
+
+<table>
+  <tr>
+    <th>Product Name</th>
+    <th>Description</th>
+    <th>Employees</th>
+  </tr>
+  {{#each filter as |product| }}
+  <tr>
+    <td>{{ product.name }}</td>
+    <td>{{ product.description }}</td>
+    <td>{{ product.accounts }}</td>
+  </tr>
+  {{/each}}
+</table>
+
+<br><hr><br>
+
+<h3>With add-on filter</h3>
+
+Filter (add-on): {{ input value=query }}<br><br>
+
+<table>
+  <tr>
+    <th>Product Name</th>
+    <th>Description</th>
+    <th>Employees</th>
+  </tr>
+  {{#each filteredList as |product| }}
+  <tr>
+    <td>{{ product.name }}</td>
+    <td>{{ product.description }}</td>
+    <td>{{ product.accounts }}</td>
+  </tr>
+  {{/each}}
+</table>
